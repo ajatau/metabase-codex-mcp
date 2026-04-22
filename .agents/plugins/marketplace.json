@@ -1,0 +1,21 @@
+{
+  "name": "metabase-codex-mcp",
+  "interface": {
+    "displayName": "Metabase Codex MCP"
+  },
+  "plugins": [
+    {
+      "name": "metabase",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ajatau/metabase-codex-mcp.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data"
+    }
+  ]
+}

@@ -67,7 +67,28 @@ Local development can use `http://localhost:3000`.
 
 ## Install In Codex
 
-Use these steps to install the plugin into a local Codex setup.
+Use one of these paths to install the plugin into Codex.
+
+### Install From The Marketplace Repo
+
+Recent Codex versions can add a Git-backed marketplace directly:
+
+```bash
+codex plugin marketplace add ajatau/metabase-codex-mcp --ref main
+```
+
+Then open the Codex plugin directory, choose the `Metabase Codex MCP` marketplace, install `Metabase`, and restart Codex if prompted.
+
+After installation, configure the plugin for your Metabase instance:
+
+```bash
+cd ~/.codex/plugins/cache/metabase-codex-mcp/metabase/1.4.0
+python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
+```
+
+If your Codex version does not support `codex plugin marketplace add`, use the manual local install below.
+
+### Manual Local Install
 
 1. Clone the plugin into your Codex plugins directory:
 
