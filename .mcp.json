@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "metabase": {
+      "command": "python3",
+      "args": [
+        "./scripts/metabase_legacy_mcp.py"
+      ],
+      "cwd": ".",
+      "env": {
+        "METABASE_URL": "http://localhost:3000",
+        "METABASE_AUTH_MODE": "auto",
+        "METABASE_API_KEY_KEYCHAIN_SERVICE": "codex-metabase:http://localhost:3000:api-key",
+        "METABASE_SESSION_TOKEN_KEYCHAIN_SERVICE": "codex-metabase:http://localhost:3000:session-token"
+      },
+      "note": "Canonical server selected by configure_metabase.py. Read-only stdio MCP bridge for Metabase versions below 60 or instances without native MCP enabled. It reads secrets from METABASE_API_KEY, METABASE_SESSION_TOKEN, or macOS Keychain. Do not put secrets in this file."
+    },
+    "metabase-legacy": {
+      "command": "python3",
+      "args": [
+        "./scripts/metabase_legacy_mcp.py"
+      ],
+      "cwd": ".",
+      "env": {
+        "METABASE_URL": "http://localhost:3000",
+        "METABASE_AUTH_MODE": "auto",
+        "METABASE_API_KEY_KEYCHAIN_SERVICE": "codex-metabase:http://localhost:3000:api-key",
+        "METABASE_SESSION_TOKEN_KEYCHAIN_SERVICE": "codex-metabase:http://localhost:3000:session-token"
+      },
+      "note": "Compatibility alias. Read-only stdio MCP bridge for Metabase versions below 60 or instances without native MCP enabled. It reads secrets from METABASE_API_KEY, METABASE_SESSION_TOKEN, or macOS Keychain. Do not put secrets in this file."
+    }
+  }
+}

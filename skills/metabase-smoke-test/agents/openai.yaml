@@ -1,0 +1,4 @@
+interface:
+  display_name: "Metabase Smoke Test"
+  short_description: "Verify Metabase plugin connectivity"
+  default_prompt: "Use $metabase-smoke-test to verify the Metabase plugin connection."

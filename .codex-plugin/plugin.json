@@ -1,0 +1,45 @@
+{
+  "name": "metabase",
+  "version": "1.4.0",
+  "description": "Connect Codex to Metabase analytics through native MCP or a read-only legacy API bridge.",
+  "author": {
+    "name": "Abba",
+    "url": "https://www.metabase.com/"
+  },
+  "homepage": "https://github.com/ajatau/metabase-codex-mcp",
+  "repository": "https://github.com/ajatau/metabase-codex-mcp.git",
+  "license": "MIT",
+  "keywords": [
+    "metabase",
+    "mcp",
+    "analytics",
+    "business-intelligence",
+    "semantic-layer",
+    "data"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Metabase",
+    "shortDescription": "Analyze Metabase metrics, models, dashboards, and tables.",
+    "longDescription": "Use a single canonical Metabase MCP server name that points to native Metabase MCP when available, or a read-only local API bridge for older Metabase instances. Native mode uses Metabase OAuth. Legacy mode reads credentials from environment variables or macOS Keychain and exposes conservative read tools.",
+    "developerName": "Abba",
+    "category": "Data",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://www.metabase.com/",
+    "privacyPolicyURL": "https://www.metabase.com/privacy/",
+    "termsOfServiceURL": "https://www.metabase.com/terms/",
+    "defaultPrompt": [
+      "Find the metric behind this KPI and explain its trend.",
+      "Summarize this dashboard with source object IDs.",
+      "Compare this month's performance to last month.",
+      "Run the Metabase plugin smoke test."
+    ],
+    "brandColor": "#509EE3",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

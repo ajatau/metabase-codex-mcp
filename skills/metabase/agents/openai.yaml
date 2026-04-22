@@ -1,0 +1,4 @@
+interface:
+  display_name: "Metabase"
+  short_description: "Analyze Metabase metrics and dashboards"
+  default_prompt: "Use $metabase to analyze this Metabase question."
