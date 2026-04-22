@@ -81,14 +81,16 @@ Then:
    - Codex CLI: run `codex`, then type `/plugins`.
 3. Select the `Metabase Codex MCP` marketplace.
 4. Install `Metabase`.
-5. Configure your Metabase URL:
+5. Run the interactive setup:
 
 ```bash
 cd ~/.codex/plugins/cache/metabase-codex-mcp/metabase/1.4.0
-python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
+python3 scripts/configure_metabase.py
 ```
 
-6. Restart Codex.
+   The setup asks for your Metabase URL, chooses native MCP or legacy mode, and can store a legacy API key or session token in macOS Keychain.
+
+6. Restart Codex so it reloads the plugin configuration.
 7. Ask Codex:
 
 ```text
@@ -101,7 +103,7 @@ Manual fallback for older Codex builds:
 mkdir -p ~/plugins
 git clone https://github.com/ajatau/metabase-codex-mcp.git ~/plugins/metabase
 cd ~/plugins/metabase
-python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
+python3 scripts/configure_metabase.py
 ```
 
 If the cloned plugin does not appear after restarting Codex, create `~/.agents/plugins/marketplace.json`:
@@ -131,13 +133,15 @@ If the cloned plugin does not appear after restarting Codex, create `~/.agents/p
 
 Restart Codex again after editing the marketplace file.
 
-## Configuration
+## Configuration Reference
 
-Interactive setup:
+Most users should use the interactive setup during installation:
 
 ```bash
 python3 scripts/configure_metabase.py
 ```
+
+Use the commands below only when you want scripted setup or need to force a mode.
 
 Automatic native-or-legacy setup:
 
