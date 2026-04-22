@@ -67,56 +67,44 @@ Local development can use `http://localhost:3000`.
 
 ## Install In Codex
 
-Use one of these paths to install the plugin into Codex.
-
-### Install From The Marketplace Repo
-
-Recent Codex versions can add a Git-backed marketplace directly:
+Recommended install:
 
 ```bash
 codex plugin marketplace add ajatau/metabase-codex-mcp --ref main
 ```
 
-Then open the Codex plugin directory, choose the `Metabase Codex MCP` marketplace, install `Metabase`, and restart Codex if prompted.
+Then:
 
-After installation, configure the plugin for your Metabase instance:
+1. Open Codex.
+2. Open the plugin directory.
+   - Codex app: open `Plugins`.
+   - Codex CLI: run `codex`, then type `/plugins`.
+3. Select the `Metabase Codex MCP` marketplace.
+4. Install `Metabase`.
+5. Configure your Metabase URL:
 
 ```bash
 cd ~/.codex/plugins/cache/metabase-codex-mcp/metabase/1.4.0
 python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
 ```
 
-If your Codex version does not support `codex plugin marketplace add`, use the manual local install below.
-
-### Manual Local Install
-
-1. Clone the plugin into your Codex plugins directory:
-
-```bash
-mkdir -p ~/plugins
-git clone https://github.com/ajatau/metabase-codex-mcp.git ~/plugins/metabase
-```
-
-2. Configure the plugin for your Metabase instance:
-
-```bash
-cd ~/plugins/metabase
-python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
-```
-
-3. Restart Codex so it reloads the plugin manifest and `.mcp.json`.
-
-4. Open Codex and enable or select the `Metabase` plugin if your Codex build shows a plugin picker.
-
-5. Ask Codex to verify the connection:
+6. Restart Codex.
+7. Ask Codex:
 
 ```text
 Run the Metabase plugin smoke test.
 ```
 
-If the plugin does not appear in Codex after restarting, add it to your local Codex marketplace file.
+Manual fallback for older Codex builds:
 
-Create or update `~/.agents/plugins/marketplace.json`:
+```bash
+mkdir -p ~/plugins
+git clone https://github.com/ajatau/metabase-codex-mcp.git ~/plugins/metabase
+cd ~/plugins/metabase
+python3 scripts/configure_metabase.py --url https://your-metabase.example.com --server-mode auto --auth-mode auto
+```
+
+If the cloned plugin does not appear after restarting Codex, create `~/.agents/plugins/marketplace.json`:
 
 ```json
 {
@@ -141,7 +129,7 @@ Create or update `~/.agents/plugins/marketplace.json`:
 }
 ```
 
-Then restart Codex again. The marketplace path is relative to your home directory, so `./plugins/metabase` points to `~/plugins/metabase`.
+Restart Codex again after editing the marketplace file.
 
 ## Configuration
 
