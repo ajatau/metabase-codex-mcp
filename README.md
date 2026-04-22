@@ -252,6 +252,7 @@ See [SECURITY.md](SECURITY.md) for more detail.
 ├── skills/
 │   ├── metabase/                     # Main analysis skill
 │   └── metabase-smoke-test/          # Connection validation skill
+├── LICENSE
 └── SECURITY.md
 ```
 
@@ -293,7 +294,7 @@ If results are missing:
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
 
 ## References
 
