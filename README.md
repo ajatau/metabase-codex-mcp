@@ -244,6 +244,44 @@ The `metabase` skill guides Codex to:
 - State filters, date ranges, assumptions, and caveats.
 - Avoid exposing sensitive row-level data unless explicitly needed.
 
+## How To Prompt In Codex
+
+The clearest prompts usually include:
+
+- What you want to know
+- The metric, dashboard, model, or saved question name if you know it
+- A time range
+- A comparison or grouping, if needed
+- Whether you want object IDs, filters, or caveats included
+
+Good examples:
+
+```text
+Use Metabase to find the dashboard for weekly revenue and summarize the main trends for the last 90 days.
+```
+
+```text
+Use Metabase to compare this month's signups to last month and include the metric or saved question ID you used.
+```
+
+```text
+Find the Metabase model or saved question behind monthly active users and explain how it is calculated.
+```
+
+```text
+Summarize the Metabase dashboard for pipeline performance by stage for the current quarter. Include filters, date range, and source object IDs.
+```
+
+```text
+Search Metabase for churn, find the most relevant metric or dashboard, and explain the trend over the last 6 months.
+```
+
+If you are not sure what object to ask for, start broad:
+
+```text
+Search Metabase for revenue-related dashboards, metrics, and saved questions, then recommend the best source to answer a month-over-month revenue question.
+```
+
 ## Smoke Testing
 
 Use the bundled `metabase-smoke-test` skill after configuration:
